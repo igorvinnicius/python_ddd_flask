@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+README.rst
+injector.py
+setup.cfg
+setup.py
+injector.egg-info/PKG-INFO
+injector.egg-info/SOURCES.txt
+injector.egg-info/dependency_links.txt
+injector.egg-info/requires.txt
+injector.egg-info/top_level.txt

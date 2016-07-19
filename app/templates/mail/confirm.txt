@@ -1,0 +1,3 @@
+User {{ user.name }} has joined.
+
+Token {{ url_for('shared.confirmaccount', token=token, _external=True) }}

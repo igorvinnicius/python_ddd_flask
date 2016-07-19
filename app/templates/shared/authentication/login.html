@@ -1,0 +1,59 @@
+{% extends "base_login.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+<!-- Login -->
+
+
+
+       <div class="lc-block toggled" id="l-login">
+           <form  method="post" action="/shared/login">
+               {{ form.hidden_tag() }}
+           <div class="input-group m-b-20 ">
+               <span class="input-group-addon"><i class="fa fa-user"></i></span>
+               <div class="fg-line {{'has-error' if form.email.errors|length > 0 else '' }}">
+                 {{ form.email(class="form-control", placeholder="Username") }}
+                 {% if form.email.errors|length > 0 %}
+                    <small class="help-block">{{form.email.errors.0}}</small>
+                 {% endif %}
+               </div>
+
+           </div>
+
+           <div class="input-group m-b-20">
+               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <div class="fg-line {{'has-error' if form.password.errors|length > 0 else '' }}">
+                   {{ form.password(class="form-control", placeholder="Password") }}
+                   {% if form.password.errors|length > 0 %}
+                      <small class="help-block ">{{form.password.errors.0}}</small>
+                   {% endif %}
+               </div>
+
+           </div>
+
+           <div class="clearfix"></div>
+
+           <div class="checkbox">
+               <label>
+                   <input type="checkbox" value="">
+                   <i class="input-helper"></i>
+                   Keep me signed in
+               </label>
+           </div>
+
+
+
+           <button type="submit" class="btn btn-login btn-success btn-float"><i class="fa fa-arrow-right"></i></button>
+
+              </form>
+
+
+       </div>
+
+
+
+
+
+{% endblock %}

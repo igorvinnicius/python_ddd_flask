@@ -1,0 +1,72 @@
+{% extends "base_login.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+
+       <div class="lc-block toggled" id="l-login">
+           <form  method="post" action="/shared/register">
+               {{ form.hidden_tag() }}
+
+           <div class="input-group m-b-20 ">
+               <span class="input-group-addon"><i class="fa fa-user"></i></span>
+               <div class="fg-line {{'has-error' if form.name.errors|length > 0 else '' }}">
+                 {{ form.name(class="form-control", placeholder="Name") }}
+                 {% if form.name.errors|length > 0 %}
+                    <small class="help-block">{{form.name.errors.0}}</small>
+                 {% endif %}
+               </div>
+           </div>
+
+
+           <div class="input-group m-b-20 ">
+               <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+               <div class="fg-line {{'has-error' if form.email.errors|length > 0 else '' }}">
+                 {{ form.email(class="form-control", placeholder="Email") }}
+                 {% if form.email.errors|length > 0 %}
+                    <small class="help-block">{{form.email.errors.0}}</small>
+                 {% endif %}
+               </div>
+
+           </div>
+
+           <div class="input-group m-b-20">
+               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <div class="fg-line {{'has-error' if form.password.errors|length > 0 else '' }}">
+                   {{ form.password(class="form-control", placeholder="Password") }}
+                   {% if form.password.errors|length > 0 %}
+                      <small class="help-block ">{{form.password.errors.0}}</small>
+                   {% endif %}
+               </div>
+           </div>
+
+           <div class="input-group m-b-20">
+               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <div class="fg-line {{'has-error' if form.password.errors|length > 0 else '' }}">
+                   {{ form.password_confirm(class="form-control", placeholder="Confirm password") }}
+                   {% if form.password_confirm.errors|length > 0 %}
+                      <small class="help-block ">{{form.password_confirm.errors.0}}</small>
+                   {% endif %}
+               </div>
+           </div>
+
+           <div class="clearfix"></div>
+
+           <div class="checkbox">
+               <label>
+                   <input type="checkbox" value="">
+                   <i class="input-helper"></i>
+                   Accept the license agreement
+               </label>
+           </div>
+
+           <button type="submit" class="btn btn-login btn-success btn-float"><i class="fa fa-arrow-right"></i></button>
+
+              </form>
+
+
+       </div>
+
+
+{% endblock %}

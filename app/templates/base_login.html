@@ -1,0 +1,41 @@
+<!DOCTYPE>
+
+<html>
+
+	<head>
+
+
+		{% assets "vendor_login_css" %}
+				<link rel='stylesheet' href="{{ ASSET_URL }}" async/>
+		{% endassets %}
+
+		{% assets "app_css" %}
+        <link rel='stylesheet' href="{{ ASSET_URL }}" async/>
+    {% endassets %}
+
+
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" async>
+
+
+	</head>
+
+	<body class="login-content">
+
+
+
+
+		{% block content %}
+		{% endblock %}
+
+		{% assets "vendor_login_js" %}
+        <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+
+		{% assets "functions_js" %}
+				<script type="text/javascript" src="{{ ASSET_URL }}"></script>
+		{% endassets %}
+
+	</body>
+
+</html>
